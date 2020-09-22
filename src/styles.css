@@ -25,11 +25,23 @@ header {
 }
 .image-container {
   width: 170px;
-  margin: 10px;
+  position: relative;
 }
 
-img.image-grid {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.cart {
+  color: black;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.like {
+  color: black;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  cursor: pointer;
 }
