@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { appContext } from "../appContext.js";
 
 function Picture({ picture }) {
   const [hovered, setHovered] = useState(false);
+  const { likePicture } = useContext(appContext);
 
-  const likeIcon = hovered && <span className="like">like </span>;
-  const cartIcon = hovered && <span className="cart">cart </span>;
+  const favClass = picture.isLiked ? "ri-heart-fill" : "ri-heart-line";
+
+  const likeIcon = hovered && (
+    <i
+      className={`${favClass} like`}
+      onClick={() => likePicture(picture.id)}
+    ></i>
+  );
+
+  const cartIcon = hovered && <i className="ri-shopping-cart-line cart"></i>;
 
   return (
     <div

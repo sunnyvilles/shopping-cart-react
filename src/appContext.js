@@ -12,8 +12,22 @@ function ContextProvider(props) {
       .then((data) => setPictures(data));
   }, []);
 
+  const likePicture = (id) => {
+    setPictures((prevPictures) => {
+      const updatedPictures = prevPictures.map((picture) => {
+        if (picture.id === id) {
+          picture.isLiked = !picture.isLiked;
+          console.log(picture);
+        }
+        return picture;
+      });
+
+      return updatedPictures;
+    });
+  };
+
   return (
-    <appContext.Provider value={{ pictures }}>
+    <appContext.Provider value={{ pictures, likePicture }}>
       {props.children}
     </appContext.Provider>
   );

@@ -24,24 +24,21 @@ header {
   align-content: center;
 }
 .image-container {
+  color: black;
   width: 170px;
+  height: 170px;
+  padding: 10px;
   position: relative;
 }
 
 .cart {
-  color: black;
-  font-size: 1.2rem;
   position: absolute;
-  top: 5px;
-  right: 15px;
+  right: 25px;
   cursor: pointer;
 }
 
 .like {
-  color: black;
-  font-size: 1.2rem;
   position: absolute;
-  top: 5px;
-  left: 15px;
+  left: 25px;
   cursor: pointer;
 }
