@@ -12,7 +12,7 @@ function CartItem({ cartItem }) {
           onClick={() => addRemoveFromCart(cartItem)}
         />
       </div>
-      <span>2€</span>
+      <span>2 €</span>
     </div>
   );
 }

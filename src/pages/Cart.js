@@ -8,7 +8,13 @@ function Cart() {
     <CartItem key={cartItem.id} cartItem={cartItem} />
   ));
 
-  return <div>{cartItemsEl}</div>;
+  return (
+    <div>
+      {cartItemsEl}
+      <hr />
+      <div> Total : {cartItems.length * 2} €</div>
+    </div>
+  );
 }
 
 export default Cart;
