@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import PropTypes from "prop-types"
 import { appContext } from "../appContext.js";
 
 function Picture({ picture }) {
@@ -26,6 +27,14 @@ function Picture({ picture }) {
       {likeIcon} {cartIcon}
     </div>
   );
+}
+
+Picture.propTypes = {
+  picture:PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    thumbnailUrl: PropTypes.string.isRequired,
+    isLiked:PropTypes.bool
+  })
 }
 
 export default Picture;
