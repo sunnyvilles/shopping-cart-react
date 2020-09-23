@@ -4,7 +4,7 @@ const appContext = React.createContext();
 
 function ContextProvider(props) {
   const [pictures, setPictures] = useState([]);
-
+  const [cartItems, setCartItems] = useState([]);
   //runs when the component loads
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
@@ -26,8 +26,27 @@ function ContextProvider(props) {
     });
   };
 
+  const addRemoveFromCart = (pictureObj) => {
+    if (pictureObj.addedToCart) {
+      pictureObj.addedToCart = false;
+      setCartItems((prevCartItems) => {
+        return prevCartItems.filter(
+          (cartItem) => cartItem.id !== pictureObj.id
+        );
+      });
+    } else {
+      setCartItems((prevCartItems) => {
+        pictureObj.addedToCart = true;
+        return [...prevCartItems, pictureObj];
+      });
+    }
+  };
+  console.log(cartItems);
+
   return (
-    <appContext.Provider value={{ pictures, likePicture }}>
+    <appContext.Provider
+      value={{ pictures, likePicture, addRemoveFromCart, cartItems }}
+    >
       {props.children}
     </appContext.Provider>
   );
