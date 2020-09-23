@@ -5,7 +5,7 @@ import Picture from "../components/Picture.js";
 function Photos() {
   const { pictures } = useContext(appContext);
   const images = pictures.map((img) => <Picture key={img.id} picture={img} />);
-  return <div id="picutres-list">{images}</div>;
+  return <div id="pictures-list">{images}</div>;
 }
 
 export default Photos;

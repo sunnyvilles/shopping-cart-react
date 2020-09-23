@@ -27,11 +27,11 @@ function Picture({ picture }) {
 
   return (
     <div
-      className="image-container"
+      className="image-container position-relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <img src={picture.thumbnailUrl} className="" alt="empty space" />
+      <img src={picture.thumbnailUrl} alt="empty space" />
       {likeIcon} {cartIcon}
     </div>
   );
