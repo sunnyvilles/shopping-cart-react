@@ -11,7 +11,7 @@ function Header() {
   return (
     <header>
       <Link to="/">
-        <h1>Pictures</h1>
+        <h1>Colors</h1>
       </Link>
       <Link to="/cart">
         <i className={`${cartIconFilled} ri-fw ri-2x`}></i>
